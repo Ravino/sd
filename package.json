@@ -4,17 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "esCheck": "eslint",
+    "esFix": "eslint --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-node": "^3.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-promise": "^3.8.0",
     "express": "^4.16.3",
     "express-logger": "0.0.3",
     "express-session": "^1.15.6",
     "htmlspecialchars": "^1.0.5",
+    "husky": "^1.0.0-rc.13",
     "ioredis": "^3.2.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
