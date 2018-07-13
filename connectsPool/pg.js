@@ -1,6 +1,6 @@
 "use strict";
 
-const pg = require ("pg-pool");
+const Pg = require ("pg-pool");
 
 const config = {
   "database": "sd",
@@ -15,6 +15,4 @@ const config = {
 };
 
 
-module. exports = () => {
-  return new pg (config);
-};
+module. exports = () => new Pg (config);

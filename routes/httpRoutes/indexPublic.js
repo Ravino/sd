@@ -3,13 +3,11 @@
 const router = require ("router") ();
 
 
-
 router. get ("/", (req, res) => {
+
   res. render ("index.pug");
+
 });
 
 
-
-module. exports = () => {
-  return router;
-};
+module. exports = () => router;

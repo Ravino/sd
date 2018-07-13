@@ -1,8 +1,7 @@
 "use strict";
 
-module. exports = () => {
+module. exports = () => (req, access, refresh, params, profile, done) => {
 
-  return (req, access, refresh, params, profile, done) => {
-    console. log (profile);
-  };
+//  console. log (profile);
+
 };

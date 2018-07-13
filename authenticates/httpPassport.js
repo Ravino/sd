@@ -5,22 +5,24 @@ const strategys = require ("./httpPassport/strategys.js") ();
 
 
 passport. serializeUser ((user, done) => {
+
   done (null, user);
+
 });
 
 
 passport. deserializeUser ((user, done) => {
+
   done (null, user);
+
 });
 
 
+for (const strategy of strategys) {
 
-for (let strategy in strategys) {
-  passport. use (strategys [strategy]);
+  passport. use (strategy);
+
 }
 
 
-
-module. exports = () => {
-  return passport;
-};
+module. exports = () => passport;

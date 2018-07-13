@@ -15,14 +15,17 @@ httpConfig. initialization (httpConfig. middlewares ());
 httpRoutes. initialization (httpRoutes. routes ());
 
 
-pg. connect (). then ( db => {
+pg. connect (). then ((db) => {
 
   global. pg = db;
   global. httpPassport = httpPassport;
 
   app. listen (3000);
+
 },
 
-err => {
+(err) => {
+
   console. log (err);
+
 });

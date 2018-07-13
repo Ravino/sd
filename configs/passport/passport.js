@@ -3,10 +3,7 @@
 const passport = require ("passport");
 
 
-module. exports = () => {
-
-  return [
-    passport. initialize (),
-    passport. session (),
-  ];
-};
+module. exports = () => [
+  passport. initialize (),
+  passport. session (),
+];

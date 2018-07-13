@@ -6,32 +6,35 @@ module. exports = (app) => {
 
     "initialization": function (middlewares) {
 
-      for (let middleware in middlewares) {
+      for (const middleware of middlewares) {
 
-        if (typeof middlewares [middleware] == "function") {
-          this. initialization (middlewares [middleware]);
+        if (typeof middleware === "object") {
+
+          this. initialization (middleware);
           continue;
+
         }
 
-        app. use (middlewares [middleware]);
-      }
-    },
+        app. use (middleware);
 
+      }
+
+    },
 
 
     "settings": () => {
+
       app. set ("view engine", "pug");
       app. set ("views", "/www/project/frontPublic");
+
     },
 
 
-
-    "middlewares": () => {
-      return [
-        require ("./cookieParser/cookieParser.js") (),
-        require ("./bodyParser/bodyParser.js") (),
-        require ("./passport/passport.js") (),
-      ];
-    },
+    "middlewares": () => [
+      require ("./cookieParser/cookieParser.js") (),
+      require ("./bodyParser/bodyParser.js") (),
+      require ("./passport/passport.js") (),
+    ],
   };
+
 };

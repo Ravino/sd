@@ -9,4 +9,5 @@ module. exports = () => {
     "callbackURL": "/public/auth/vk",
     "reqPassToCallback": true,
   };
+
 };

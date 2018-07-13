@@ -1,8 +1,5 @@
 "use strict";
 
-module. exports = () => {
-
-  return [
-    require ("./vkontakte.js") (),
-  ];
-};
+module. exports = () => [
+  require ("./vkontakte.js") (),
+];
