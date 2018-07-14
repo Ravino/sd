@@ -18,6 +18,7 @@ module. exports = (app) => {
     "routes": () => [
       { "path": "/", "handler": require ("./httpRoutes/index.js") (), },
       { "path": "/public", "handler": require ("./httpRoutes/indexPublic.js") (), },
+      { "path": "/api/internal", "handler": require ("./httpRoutes/apiInternal.js") (), },
     ],
   };
 
