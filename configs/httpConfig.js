@@ -25,7 +25,7 @@ module. exports = (app) => {
     "settings": () => {
 
       app. set ("view engine", "pug");
-      app. set ("views", "/www/project/frontPublic");
+      app. set ("views", "frontPublic");
 
     },
 
