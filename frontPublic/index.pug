@@ -1,15 +1,11 @@
--
-  var title = "hello";
-  var body = "SD";
-
 doctype transitional
 
 html(lang = "ru")
 
   head
-    meta(charset = "utf-8")
-    title= title
+    include basePartials/head.pug
+    +head ()
 
 
-  body= body
-    h1 hello world
+  body.
+    Fuck is you
