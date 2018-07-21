@@ -71,7 +71,15 @@ module. exports = () => {
 
 
     pg. query ("select insertUser ($1::uuid, $2::varchar, $3::varchar, $4::varchar, $5::varchar, $6::varchar)", insertUserData). then ( statusInsertUserData => {
-      console. log (statusInsertUserData);
+
+      if (statusInsertUserData. row [0] || statusInsertUserData. row [0]. insertuser == 1) {
+        res. redirect ("/");
+        return true;
+      }
+
+      res. redirect ("/error");
+      return false;
+
     });
   };
 };
