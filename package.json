@@ -14,6 +14,7 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-promise": "^3.8.0",
+    "express-flash": "0.0.2",
     "express-logger": "0.0.3",
     "husky": "^1.0.0-rc.13",
     "pg": "^7.4.3",
