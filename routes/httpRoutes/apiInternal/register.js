@@ -4,7 +4,6 @@ const router = require ("router") ();
 const handler = require ("./register/handler.js") ();
 
 
-
 router. post ("register", (req, res) => {
 
   if (req. isAuthenticated ()) {
