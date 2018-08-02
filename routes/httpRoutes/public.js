@@ -35,6 +35,6 @@ router. get ("/register", (req, res) => {
 });
 
 
-
 router. use ("/login", require ("./public/loginLocal.js") ());
+
 module. exports = () => router;
