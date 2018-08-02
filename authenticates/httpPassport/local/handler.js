@@ -9,7 +9,7 @@ const trim = require ("trim");
 const pattern = /^[^\n\r\s]$/;
 
 
-module. exports = () => (pReq, pLogin, pPassword, pDone) => {
+module. exports = () => (/* pReq, */pLogin, pPassword, pDone) => {
 
 //  const req = pReq;
   let login = pLogin;
