@@ -1,7 +1,3 @@
 "use strict";
 
-module. exports = () => (req, access, refresh, params, profile, done) => {
-
-//  console. log (profile);
-
-};
+module. exports = () => (pReq, pAccess, pRefresh, pProfile, pParam, pDone) => undefined;
