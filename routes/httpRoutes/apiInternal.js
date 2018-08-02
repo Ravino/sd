@@ -3,18 +3,7 @@
 const router = require ("router") ();
 
 
-router. get ("/i", (req, res) => {
-
-  res. send ("hello");
-
-});
-
-
-router. use ("*", (req, res) => {
-
-  res. send (404);
-
-});
+router. use ("/register", require ("./apiInternal/register.js") ());
 
 
 module. exports = () => router;
