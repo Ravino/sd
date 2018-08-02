@@ -33,6 +33,7 @@ module. exports = (app) => {
     "middlewares": () => [
       require ("./cookieParser/cookieParser.js") (),
       require ("./bodyParser/bodyParser.js") (),
+      require ("./expressFlash/expressFlash.js") (),
       require ("./passport/passport.js") (),
     ],
   };
