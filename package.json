@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "esCheck": "eslint",
-    "esFix": "eslint --fix",
-    "precommit": "npm run esFix .",
-    "prepush": "npm run esFix ."
+    "esFix": "eslint --fix"
   },
   "author": "",
   "license": "ISC",
@@ -39,5 +37,11 @@
     "router": "^1.3.3",
     "trim": "0.0.1",
     "uuid": "^3.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run esFix .",
+      "pre-push": "npm run esFix ."
+    }
   }
 }
