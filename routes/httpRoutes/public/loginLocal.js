@@ -3,10 +3,10 @@
 const router = require ("router") ();
 
 
-
 router. get ("/local", (req, res) => {
 
   if (req. isAuthenticated ()) {
+
     res. redirect ("/");
     return true;
 
@@ -19,7 +19,4 @@ router. get ("/local", (req, res) => {
 });
 
 
-
-module. exports = () => {
-  return router;
-};
+module. exports = () => router;
