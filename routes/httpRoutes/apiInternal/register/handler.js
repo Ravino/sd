@@ -13,7 +13,7 @@ const pattern = /^[^\n\s\r]{1,}$/;
 
 module. exports = () => (req, res) => {
 
-  if (pattern. test (req. body. login) == false) {
+  if (pattern. test (req. body. login) === false) {
 
     res. send ("Login incorrect");
     return false;
@@ -21,7 +21,7 @@ module. exports = () => (req, res) => {
   }
 
 
-  if (pattern. test (req. body. password) == false) {
+  if (pattern. test (req. body. password) === false) {
 
     res. send ("Password incorrect");
     return false;
@@ -37,7 +37,7 @@ module. exports = () => (req, res) => {
   }
 
 
-  if (pattern. test (req. body. name) == false) {
+  if (pattern. test (req. body. name) === false) {
 
     res. send ("Name incorrect");
     return false;
@@ -72,9 +72,9 @@ module. exports = () => (req, res) => {
   ];
 
 
-  pg. query ("select insertUser ($1::uuid, $2::varchar, $3::varchar, $4::varchar, $5::varchar, $6::varchar)", insertUserData). then ((statusInsertUserData) => {
+  global. pg. query ("select insertUser ($1::uuid, $2::varchar, $3::varchar, $4::varchar, $5::varchar, $6::varchar)", insertUserData). then ((statusInsertUserData) => {
 
-    if (statusInsertUserData. row [0] || statusInsertUserData. row [0]. insertuser == 1) {
+    if (statusInsertUserData. row [0] || statusInsertUserData. row [0]. insertuser === 1) {
 
       res. redirect ("/");
       return true;
@@ -85,5 +85,7 @@ module. exports = () => (req, res) => {
     return false;
 
   });
+
+  return undefined;
 
 };
