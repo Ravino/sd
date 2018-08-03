@@ -1,0 +1,13 @@
+node_modules/*
+webpack/*
+build/*
+*.log
+*.txt
+package-lock.json
+package.json
+test.*
+\.*ignore
+\.*rc*
+webpack.config.js
+*.css*
+*.img*
