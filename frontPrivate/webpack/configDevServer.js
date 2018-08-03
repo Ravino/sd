@@ -9,6 +9,14 @@ const webpack = require ("webpack");
 
 
 
+const joinPath = (originPath) => {
+
+  return path. join (path. resolve (), "./", originPath);
+
+};
+
+
+
 module. exports = () => {
 
   return {
@@ -20,14 +28,14 @@ module. exports = () => {
 
 
     "entry": {
-      "build": "/www/project/frontPrivate/src/index.js",
+      "build": joinPath ("src/index.js"),
     },
 
 
     "output": {
       "pathinfo": true,
       "filename": "[name].js",
-      "path": "/www/project/frontPrivate/build/development",
+      "path": joinPath ("build/development"),
       "publicPath": "/dev/",
       "sourceMapFilename": "[name].source.map",
 //      "library": "[name]",
@@ -139,7 +147,7 @@ module. exports = () => {
 
       new htmlWebpackPlugin ({
         "filename": "index.htm",
-        "template": "/www/project/frontPrivate/src/index.htm",
+        "template": joinPath ("src/index.htm"),
         "inject": true,
         "hash": true,
         "minify": true,
