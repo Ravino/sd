@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "type=devServer NODE_ENV=development webpack-dev-server --color=true --progress=true",
-    "development": "type=development NODE_ENV=development webpack --mode=development --progress=true --color=true",
-    "production": "type=production NODE_ENV=production webpack --mode=production --progress=true --color=true",
-    "esCheck": "eslint",
-    "esFix": "eslint --fix",
+    "start": "cross-env type=devServer NODE_ENV=development webpack-dev-server --color=true --progress=true",
+    "development": "cross-env type=development NODE_ENV=development webpack --mode=development --progress=true --color=true",
+    "production": "cross-env type=production NODE_ENV=production webpack --mode=production --progress=true --color=true",
+    "esCheck": "cross-env eslint",
+    "esFix": "cross-env eslint --fix",
     "precommit": "npm run esFix .",
     "prepush": "npm run esFix ."
   },
