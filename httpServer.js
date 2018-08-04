@@ -6,12 +6,15 @@ const logger = require ("console-log-level");
 
 const httpConfig = require ("./configs/httpConfig.js") (app);
 const httpRoutes = require ("./routes/httpRoutes.js") (app);
-
-const pg = require ("./connectsPool/pg.js") ();
 const httpPassport = require ("./authenticates/httpPassport.js") ();
 
+const redis = require ("./connectsPool/redis.js") ();
+const pg = require ("./connectsPool/pg.js") ();
 
+
+global. redis = redis;
 global. logger = logger ({ "prefix": level => `${level}:${new Date (). toISOString ()}:`, });
+global. passport = httpPassport;
 
 
 httpConfig. settings ();
@@ -22,7 +25,6 @@ httpRoutes. initialization (httpRoutes. routes ());
 pg. connect (). then ((db) => {
 
   global. pg = db;
-  global. httpPassport = httpPassport;
 
   app. listen (3000, () => {
 
