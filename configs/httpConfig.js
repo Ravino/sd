@@ -34,6 +34,7 @@ module. exports = (app) => {
       require ("./cookieParser/cookieParser.js") (),
       require ("./bodyParser/bodyParser.js") (),
       require ("./expressFlash/expressFlash.js") (),
+      require ("./expressLogger/expressLogger.js") (),
       require ("./expressSession/expressSession.js") (),
       require ("./passport/passport.js") (),
     ],
