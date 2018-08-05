@@ -1,6 +1,7 @@
 "use strict";
 
 const path = require ("path");
+const faviconsWebpackPlugin = require ("favicons-webpack-plugin");
 const friendlyErrorsWebpackPlugin = require ("friendly-errors-webpack-plugin");
 const htmlWebpackPlugin = require ("html-webpack-plugin");
 const notifierWebpackPlugin = require ("webpack-notifier");
@@ -102,7 +103,7 @@ module. exports = () => {
         },
 
         {
-          "test": /\.(svg|jpg|gif|jpeg)$/,
+          "test": /(sprite)\.svg$/,
           "loader": "svg-sprite-loader",
           "exclude": /node_modules/,
         },
@@ -152,14 +153,16 @@ module. exports = () => {
 
         {
           "test": /\.sass$/,
-          "use": [
+          "loaders": [
             "vue-style-loader",
             "css-loader",
+            {
+              "loader": "sass-loader",
+              "options": {
+                "indentedSyntax": true,
+              },
+            },
           ],
-          "loader": "sass-loader",
-          "options": {
-            "indentedSyntax": true,
-          },
           "exclude": /node_modules/,
         },
 
@@ -187,7 +190,7 @@ module. exports = () => {
             "context": "",
 //            "emitFile": false,
           },
-          "exclude": /node_modules/,
+          "exclude": [/node_modules/, /(sprite)/, ],
         },
       ],
     },
@@ -212,6 +215,29 @@ module. exports = () => {
         "hash": true,
         "minify": true,
         "xhtml": true,
+      }),
+
+      new faviconsWebpackPlugin ({
+        "logo": joinPath ("src/favicon/logo.jpg"),
+        "prefix": "favicon-[hash]/",
+        "emitStats": true,
+        "statsFilename": "favicon-[hash].json",
+        "persistentCache": true,
+        "inject": true,
+        "background": "#fff",
+        "title": "Space Dream",
+        "icons": {
+          "android": true,
+          "appleIcon": true,
+          "appleStartup": true,
+          "coast": false,
+          "favicons": true,
+          "firefox": true,
+          "opengraph": false,
+          "twitter": false,
+          "yandex": true,
+          "windows": false,
+        },
       }),
     ],
   };
