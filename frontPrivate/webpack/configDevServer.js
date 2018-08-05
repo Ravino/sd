@@ -102,6 +102,12 @@ module. exports = () => {
         },
 
         {
+          "test": /\.(svg|jpg|gif|jpeg)$/,
+          "loader": "svg-sprite-loader",
+          "exclude": /node_modules/,
+        },
+
+        {
           "test": /\.vue$/,
           "loader": "vue-loader",
           "exclude": /node_modules/,
@@ -127,6 +133,17 @@ module. exports = () => {
         {
           "test": /\.css$/,
           "loader": "postcss-loader",
+          "exclude": /node_modules/,
+        },
+
+        {
+          "test": /\.(jpg|png|svg|gif|jpeg)/,
+          "loader": "file-loader",
+          "options": {
+            "name": "[path][name].[ext]",
+            "context": "",
+//            "emitFile": false,
+          },
           "exclude": /node_modules/,
         },
       ],
