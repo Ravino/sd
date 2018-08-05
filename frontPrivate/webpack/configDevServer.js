@@ -131,6 +131,15 @@ module. exports = () => {
         },
 
         {
+          "test": /\.less$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+            "less-loader",
+          ],
+        },
+
+        {
           "test": /\.sass$/,
           "use": [
             "vue-style-loader",
