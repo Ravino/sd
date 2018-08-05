@@ -131,12 +131,23 @@ module. exports = () => {
         },
 
         {
+          "test": /\.styl(us)?$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+            "stylus-loader",
+          ],
+          "exclude": /node_modules/,
+        },
+
+        {
           "test": /\.less$/,
           "use": [
             "vue-style-loader",
             "css-loader",
             "less-loader",
           ],
+          "exclude": /node_modules/,
         },
 
         {
@@ -149,6 +160,7 @@ module. exports = () => {
           "options": {
             "indentedSyntax": true,
           },
+          "exclude": /node_modules/,
         },
 
         {
@@ -158,6 +170,7 @@ module. exports = () => {
             "css-loader",
             "sass-loader",
           ],
+          "exclude": /node_modules/,
         },
 
         {
