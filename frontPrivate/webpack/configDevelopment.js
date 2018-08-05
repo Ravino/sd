@@ -113,6 +113,18 @@ module. exports = () => {
           "loader": "postcss-loader",
           "exclude": /node_modules/,
         },
+
+        {
+          "test": /\.(jpg|png|svg|gif|jpeg)/,
+          "loader": "file-loader",
+          "options": {
+            "name": "/img/[name].[ext]",
+            "context": "",
+//            "emitFile": false,
+          },
+          "exclude": /node_modules/,
+        },
+
       ],
     },
 
