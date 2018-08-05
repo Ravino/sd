@@ -131,6 +131,15 @@ module. exports = () => {
         },
 
         {
+          "test": /\.scss$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+            "sass-loader",
+          ],
+        },
+
+        {
           "test": /\.css$/,
           "loader": "postcss-loader",
           "exclude": /node_modules/,
