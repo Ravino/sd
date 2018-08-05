@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  h1 hello
+  router-view
 </template>
 
 <script>
