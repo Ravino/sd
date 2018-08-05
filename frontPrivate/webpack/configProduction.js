@@ -132,6 +132,49 @@ module. exports = () => {
         },
 
         {
+          "test": /\.styl(us)?$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+            "stylus-loader",
+          ],
+          "exclude": /node_modules/,
+        },
+
+        {
+          "test": /\.less$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+            "less-loader",
+          ],
+          "exclude": /node_modules/,
+        },
+
+        {
+          "test": /\.sass$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+          ],
+          "loader": "sass-loader",
+          "options": {
+            "indentedSyntax": true,
+          },
+          "exclude": /node_modules/,
+        },
+
+        {
+          "test": /\.scss$/,
+          "use": [
+            "vue-style-loader",
+            "css-loader",
+            "sass-loader",
+          ],
+          "exclude": /node_modules/,
+        },
+
+        {
           "test": /\.css$/,
           "loader": "postcss-loader",
           "exclude": /node_modules/,
