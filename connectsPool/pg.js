@@ -5,7 +5,7 @@ const Pg = require ("pg-pool");
 const config = {
   "database": "sd",
   "user": "sd",
-  "password": "1",
+  "password": "sd",
   "port": "5432",
   "ssl": true,
   "max": 20,
