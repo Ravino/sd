@@ -11,7 +11,7 @@ const pattern = /^[^\n\r\s]{1,}$/;
 
 module. exports = () => (pReq, pLogin, pPassword, pDone) => {
 
-  const req = pReq;
+//  const req = pReq;
   let login = pLogin;
   let password = pPassword;
   const done = pDone;
