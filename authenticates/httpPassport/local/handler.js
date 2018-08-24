@@ -6,12 +6,12 @@ const hsc = require ("htmlspecialchars");
 const trim = require ("trim");
 
 
-const pattern = /^[^\n\r\s]$/;
+const pattern = /^[^\n\r\s]{1,}$/;
 
 
-module. exports = () => (/* pReq, */pLogin, pPassword, pDone) => {
+module. exports = () => (pReq, pLogin, pPassword, pDone) => {
 
-//  const req = pReq;
+  const req = pReq;
   let login = pLogin;
   let password = pPassword;
   const done = pDone;
