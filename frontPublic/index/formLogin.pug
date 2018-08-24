@@ -1,0 +1,22 @@
+mixin formLogin ()
+
+  div.formLogin(role = "form")
+
+    form(action = "/api/internal/login/local", method = "post")
+
+
+      label(for = "login") Логин
+
+      br
+      input(type = "login", name = "login", id = "login", placeholder = "Введите логин", autocomplete = true, focus = true, value = "")
+      br
+
+
+      label(for = "password") Пароль
+
+      br
+      input(type = "password", name = "password", id = "password", placeholder = "Введите пароль", autocomplete = true, value = "")
+      br
+
+
+      input(type = "submit", name = "submit", value = "Войти")
