@@ -1,0 +1,53 @@
+doctype transitional
+
+
+html(lang = "ru")
+
+  head
+    include basePartials/head.pug
+    +head ()
+
+
+
+  body
+
+    div.page
+
+
+      div.row
+        div.left
+
+
+        div.center
+          h1 Страница регистрации
+
+
+        div.right
+
+
+
+
+      div.row
+        div.left
+
+
+        div.center
+          include register/form.pug
+          +form ()
+
+
+        div.right
+
+
+
+
+      div.row
+        div.left
+
+
+        div.center
+          include basePartials/footer.pug
+          +footer ()
+
+
+        div.right
