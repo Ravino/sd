@@ -1,0 +1,40 @@
+mixin form ()
+
+  div.formRegister(role = "form")
+
+    form(action = "/api/internal/register", method = "post")
+
+
+      label(for = "login") Логин
+
+      br
+      input(type = "login", name = "login", id = "login", placeholder = "Введите логин", autocomplete = false, value = "")
+      | *
+      br
+
+
+      label(for = "password") Пароль
+
+      br
+      input(type = "password", name = "password", id = "password", placeholder = "Введите пароль", autocomplete = false, value = "")
+      | *
+      br
+
+
+      label(for = "repeatPassword") Пароль повторно
+
+      br
+      input(type = "password", name = "repeatPassword", id = "repeatPassword", placeholder = "Повторите пароль", autocomplete = false, value = "")
+      | *
+      br
+
+
+      label(for = "name") Имя
+
+      br
+      input(type = "name", name = "name", id = "name", placeholder = "Введите имя", autocomplete = false, value = "")
+      | *
+      br
+
+
+      input(type = "submit", name = "submit", value = "Завершить")
