@@ -9,6 +9,7 @@ const uuidV5 = require ("uuid/v5");
 
 const addStr = "My love ";
 const pattern = /^[^\n\s\r]{1,}$/;
+const patternName = /^[^\n\r]{1,}$/;
 
 
 module. exports = () => (req, res) => {
@@ -37,7 +38,7 @@ module. exports = () => (req, res) => {
   }
 
 
-  if (pattern. test (req. body. name) === false) {
+  if (patternName. test (req. body. name) === false) {
 
     res. send ("Name incorrect");
     return false;
@@ -74,15 +75,22 @@ module. exports = () => (req, res) => {
 
   global. pg. query ("select insertUser ($1::uuid, $2::varchar, $3::varchar, $4::varchar, $5::varchar, $6::varchar)", insertUserData). then ((statusInsertUserData) => {
 
-    if (statusInsertUserData. row [0] || statusInsertUserData. row [0]. insertuser === 1) {
+    if (!statusInsertUserData. rows [0]) {
 
-      res. redirect ("/");
-      return true;
+      res. redirect ("/error?type=system");
+      return false;
 
     }
 
-    res. redirect ("/error");
-    return false;
+    if (statusInsertUserData. rows [0]. insertuser !== 1) {
+
+      res. redirect ("/error");
+      return false;
+
+    }
+
+    res. redirect ("/");
+    return true;
 
   });
 
