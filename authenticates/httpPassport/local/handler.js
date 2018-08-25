@@ -47,7 +47,7 @@ module. exports = () => (pReq, pLogin, pPassword, pDone) => {
 
   global. pg. query ("select * from users where login = $1::varchar", transmitData). then ((resultQueryUser) => {
 
-    if (!resultQueryUser. row [0]) {
+    if (!resultQueryUser. rows [0]) {
 
       done (null, false, { "error": "incorrect data", });
       return false;
@@ -55,8 +55,8 @@ module. exports = () => (pReq, pLogin, pPassword, pDone) => {
     }
 
 
-    const hashSalt = resultQueryUser. row [0]. salt;
-    const referenceHashSaltPassword = resultQueryUser. row [0]. password;
+    const hashSalt = resultQueryUser. rows [0]. salt;
+    const referenceHashSaltPassword = resultQueryUser. rows [0]. password;
 
     const hashPassword = crypto. createHash ("sha512"). update (`${password + hashSalt}nekrasov.pw`). digest ("hex");
     const hashSaltPassword = crypto. createHash ("sha512"). update (`${hashPassword + hashSalt}nekrasov.pw`). digest ("hex");
@@ -69,7 +69,7 @@ module. exports = () => (pReq, pLogin, pPassword, pDone) => {
 
     }
 
-    done (null, hashSaltPassword. row [0]);
+    done (null, resultQueryUser. rows [0]);
     return true;
 
   },
