@@ -36,6 +36,7 @@ module. exports = (app) => {
       require ("./expressFlash/expressFlash.js") (),
       require ("./expressLogger/expressLogger.js") (),
       require ("./expressSession/expressSession.js") (),
+      require ("./helmet/helmet.js") (),
       require ("./passport/passport.js") (),
     ],
   };
