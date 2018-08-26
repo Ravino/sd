@@ -28,6 +28,7 @@
     "express-logger": "0.0.3",
     "express-longpoll": "0.0.4",
     "express-session": "^1.15.6",
+    "helmet": "^3.13.0",
     "htmlspecialchars": "^1.0.5",
     "ioredis": "^3.2.2",
     "passport": "^0.4.0",
